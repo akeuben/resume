@@ -1,0 +1,270 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.7, 9 August 2023) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+\usepackage{paracol}
+\usepackage[dvipsnames]{xcolor}
+
+\ifxetexorluatex
+% If using xelatex or lualatex:
+\setmainfont{Roboto Slab}
+\setsansfont{Lato}
+\renewcommand{\familydefault}{\sfdefault}
+\else
+% If using pdflatex:
+\usepackage[rm]{roboto}
+\usepackage[defaultsans]{lato}
+% \usepackage{sourcesanspro}
+\renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{Navy}{HTML}{000d19}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{Blue}{HTML}{016ACE}
+\definecolor{LightBlue}{HTML}{4da9fe}
+\definecolor{Navy}{HTML}{013565}
+\colorlet{name}{black}
+\colorlet{tagline}{Blue}
+\colorlet{heading}{LightBlue}
+\colorlet{headingrule}{Navy}
+\colorlet{subheading}{LightBlue}
+\colorlet{accent}{Blue}
+\colorlet{emphasis}{LightGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+
+% If your CV/résumé is in a language other than English,
+% then you probably want to change these so that when you
+% copy-paste from the PDF or run pdftotext, the location
+% and date marker icons for \cvevent will paste as correct
+% translations. For example Spanish:
+% \renewcommand{\locationname}{Ubicación}
+% \renewcommand{\datename}{Fecha}
+
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear.tex}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+\input{pubs-num.tex}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Avery Keuben}
+\tagline{Software Engineer}
+%% You can add multiple photos on the left or right
+\photoR{2.8cm}{photo}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+    % Not all of these are required!
+    \email{avery1516@gmail.com}
+    \location{Canada}
+    \homepage{kappabyte.github.io}
+    \github{Kappabyte}
+    %% You can add your own arbitrary detail with
+    %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+    % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+
+    %% Or you can declare your own field with
+    %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+    % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+    % \gitlab{your_id}
+    %%
+    %% For services and platforms like Mastodon where there isn't a
+    %% straightforward relation between the user ID/nickname and the hyperlink,
+    %% you can use \printinfo directly e.g.
+    % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+    %% But if you absolutely want to create new dedicated info fields for
+    %% such platforms, then use \NewInfoField* with a star:
+    % \NewInfoField*{mastodon}{\faMastodon}
+    %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+    %% the full hyperlink.
+    % \mastodon{@username@instance}{https://instance.url/@username}
+    }
+
+    \makecvheader
+    %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+    % \AtBeginEnvironment{itemize}{\small}
+
+    %% Set the left/right column width ratio to 6:4.
+    \columnratio{0.6}
+
+    % Start a 2-column paracol. Both the left and right columns will automatically
+    % break across pages if things get too long.
+    \begin{paracol}{2}
+        \cvsection{Experience}
+
+        \cvevent{Research Assistant}{University of Calgary}{April 2023 -- Ongoing}{Calgary, Alberta}
+        \begin{itemize}
+            \item Developer for a point and click adventure game (GEARS, see below)
+            \item Using React, Typescript, and Spring Boot
+        \end{itemize}
+
+        \divider
+
+        \cvevent{Customer Service Cashier}{Calgary Co-op}{July 2021 -- Ongoing}{Calgary, Alberta}
+        \begin{itemize}
+            \item Assist customers with transactions, membership details, and lottery sales.
+            \item Balance store's registers, lottery sales, and promotional item sales.
+        \end{itemize}
+
+        \cvsection{Projects}
+
+        \cvevent{GEARS}{Gearing up for Education, Achieving Real-world Success}{}{University of Calgary}
+        \begin{itemize}
+            \item Web based point and click adventure game
+            \item Helping high school students with learning disabilities and ADHD transition to postsecondary
+        \end{itemize}
+
+        \divider
+
+        \cvevent{KappaEngine}{Simple LWJGL Game Engine}{}{Personal Project}
+        \begin{itemize}
+            \item Simple game engine in Java using LWJGL OpenGL bindings to learn graphics programming
+            \item Created simple minecraft clone using the engine in a few weeks.
+        \end{itemize}
+
+        \divider
+
+        \cvevent{Software Engineering 300 - Group Project}{Control Software for a Virtual Self Checkout Station}{}{University of Calgary}
+        \begin{itemize}
+            \item Project manager, lead developer, and software designer for a group project of 23 people creating a simulated self checkout machine.
+            \item Includes a user interface and a state machine to control the hardware of the simulation.
+        \end{itemize}
+
+        \newpage
+
+        \cvsection{Awards}
+
+        \cvachievement{\faGraduationCap}{Deans List}{Was included in the Faculty of Science Dean's List at The University of Calgary in the 2022/2023 and 2023/2024 school years.}
+
+        \divider
+
+        \cvachievement{\faDollarSign}{Presidents Admission Scholarship}{Awarded by the Univeristy of Calgary for outstanding academic achievement.}
+
+        \divider
+
+        \cvachievement{\faBook}{High School Awards}{Recieved awards in Computer Science, Physics, English, and Social Studies for outstanding academic performance.}
+
+        \divider
+
+        \cvachievement{\faBook}{Honors with Distinction}{Recieved honors with distinction in all 3 years of high school for ataining an overall average of 90\% or higher in each year.}
+
+        \divider
+        
+        \cvachievement{\faBook}{Kayla Gordon Award}{Recieved the highest award from my Middle School for outstanding service, leadership, citizenship and involvement.}
+
+        %% Switch to the right column. This will now automatically move to the second
+        %% page if the content is too long.
+        \switchcolumn
+
+        \cvsection{Education}
+
+        \cvevent{B.Sc Computer Science}{University of Calgary}{Sept 2022 -- Ongoing}{}
+
+        \divider
+
+        \cvevent{High School Diploma}{Dr. EP Scarlett High School}{June 2022}{}
+
+        \cvsection{Accomplishments}
+
+        \cvachievement{\faGraduationCap}{4.00 GPA}{in first year computer science courses}
+
+        \divider
+
+        \cvachievement{\faGraduationCap}{95\% High School Average}{Attained an overall average of 95\% in grade 12.}
+
+        \divider
+
+        \cvachievement{\faCogs}{President of High School Robotics Club}{Showed leadership by helping run and organize the team, assisting those who needed help.}
+
+        \divider
+
+        \cvachievement{\faMusic}{WAMSB World Champion}{Demonstated teamwork, cooperation, and hard work by recieving first place in the world marching competition with the Calgary Stampede Showband.}
+
+        \cvsection{Programming \\[2mm] Languages}
+
+        \cvskill{Typescript}{4.5}
+        \divider
+
+        \cvskill{Java}{4}
+        \divider
+
+        \cvskill{C}{3.5}
+        \divider
+
+        \cvskill{Nix}{3}
+
+        \newpage
+
+        \cvsection{Strengths}
+
+        \cvtag{Hard-working}
+        \cvtag{Eye for detail}
+        \cvtag{Patient}
+
+        \divider\smallskip
+
+        \cvtag{Frontend Development}\\
+        \cvtag{Backend Development}
+        \cvtag{Mathematics}
+
+        \cvsection{References}
+
+        \cvref{Prof.\ Richard Zhao Ph.D}{University of Calgary}{richard.zhao1@ucalgary.ca}
+        {}
+
+        \divider
+
+        \cvref{Prof.\ Meadow Schroeder Ph.D}{University of Calgary}{schroedm@ucalgary.ca}
+        {}
+
+        \divider
+
+        \cvref{Lisa Pozar}{Customer Service Supervisor, Calgary Co-op}{lpozar@calgarycoop.com}
+        {}
+
+        %% Yeah I didn't spend too much time making all the
+        %% spacing consistent... sorry. Use \smallskip, \medskip,
+        %% \bigskip, \vspace etc to make adjustments.
+        \medskip
+
+
+    \end{paracol}
+
+
+\end{document}
