@@ -11,50 +11,37 @@
 %% version 2003/12/01 or later.
 %%%%%%%%%%%%%%%%
 
-%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
-% \documentclass[10pt,a4paper,normalphoto]{altacv}
-
-\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
-%% AltaCV uses the fontawesome5 and packages.
-%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
-
-% Change the page layout if you need to
 \geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
 
-% The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
 \usepackage[dvipsnames]{xcolor}
 
-% Change the font if you want to, depending on whether
-% you're using pdflatex or xelatex/lualatex
-% WHEN COMPILING WITH XELATEX PLEASE USE
-% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex
 \ifxetexorluatex
-  % If using xelatex or lualatex:
-  \setmainfont{Roboto Slab}
-  \setsansfont{Lato}
-  \renewcommand{\familydefault}{\sfdefault}
+% If using xelatex or lualatex:
+\setmainfont{Roboto Slab}
+\setsansfont{Lato}
+\renewcommand{\familydefault}{\sfdefault}
 \else
-  % If using pdflatex:
-  \usepackage[rm]{roboto}
-  \usepackage[defaultsans]{lato}
-  % \usepackage{sourcesanspro}
-  \renewcommand{\familydefault}{\sfdefault}
+% If using pdflatex:
+\usepackage[rm]{roboto}
+\usepackage[defaultsans]{lato}
+% \usepackage{sourcesanspro}
+\renewcommand{\familydefault}{\sfdefault}
 \fi
 
 % Change the colours if you want to
-\definecolor{SlateGrey}{HTML}{000d19}
+\definecolor{Navy}{HTML}{000d19}
 \definecolor{LightGrey}{HTML}{666666}
-\definecolor{DarkPastelRed}{HTML}{016ACE}
-\definecolor{PastelRed}{HTML}{4da9fe}
-\definecolor{GoldenEarth}{HTML}{013565}
+\definecolor{Blue}{HTML}{016ACE}
+\definecolor{LightBlue}{HTML}{4da9fe}
+\definecolor{Navy}{HTML}{013565}
 \colorlet{name}{black}
-\colorlet{tagline}{PastelRed}
-\colorlet{heading}{DarkPastelRed}
-\colorlet{headingrule}{GoldenEarth}
-\colorlet{subheading}{PastelRed}
-\colorlet{accent}{PastelRed}
-\colorlet{emphasis}{SlateGrey}
+\colorlet{tagline}{Blue}
+\colorlet{heading}{LightBlue}
+\colorlet{headingrule}{Navy}
+\colorlet{subheading}{LightBlue}
+\colorlet{accent}{Blue}
+\colorlet{emphasis}{LightGrey}
 \colorlet{body}{LightGrey}
 
 % Change some fonts, if necessary
@@ -103,150 +90,187 @@
 % \photoL{2.5cm}{Yacht_High,Suitcase_High}
 
 \personalinfo{%
-  % Not all of these are required!
-  \email{avery1516@gmail.com}
-  \location{Canada}
-  \homepage{kappabyte.github.io}
-  \github{Kappabyte}
-  %% You can add your own arbitrary detail with
-  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
-  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+    % Not all of these are required!
+    \email{avery1516@gmail.com}
+    \location{Canada}
+    \homepage{kappabyte.github.io}
+    \github{Kappabyte}
+    %% You can add your own arbitrary detail with
+    %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+    % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
 
-  %% Or you can declare your own field with
-  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
-  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
-  % \gitlab{your_id}
-  %%
-  %% For services and platforms like Mastodon where there isn't a
-  %% straightforward relation between the user ID/nickname and the hyperlink,
-  %% you can use \printinfo directly e.g.
-  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
-  %% But if you absolutely want to create new dedicated info fields for
-  %% such platforms, then use \NewInfoField* with a star:
-  % \NewInfoField*{mastodon}{\faMastodon}
-  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
-  %% the full hyperlink.
-  % \mastodon{@username@instance}{https://instance.url/@username}
-}
+    %% Or you can declare your own field with
+    %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+    % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+    % \gitlab{your_id}
+    %%
+    %% For services and platforms like Mastodon where there isn't a
+    %% straightforward relation between the user ID/nickname and the hyperlink,
+    %% you can use \printinfo directly e.g.
+    % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+    %% But if you absolutely want to create new dedicated info fields for
+    %% such platforms, then use \NewInfoField* with a star:
+    % \NewInfoField*{mastodon}{\faMastodon}
+    %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+    %% the full hyperlink.
+    % \mastodon{@username@instance}{https://instance.url/@username}
+    }
 
-\makecvheader
-%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
-% \AtBeginEnvironment{itemize}{\small}
+    \makecvheader
+    %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+    % \AtBeginEnvironment{itemize}{\small}
 
-%% Set the left/right column width ratio to 6:4.
-\columnratio{0.6}
+    %% Set the left/right column width ratio to 6:4.
+    \columnratio{0.6}
 
-% Start a 2-column paracol. Both the left and right columns will automatically
-% break across pages if things get too long.
-\begin{paracol}{2}
-\cvsection{Experience}
+    % Start a 2-column paracol. Both the left and right columns will automatically
+    % break across pages if things get too long.
+    \begin{paracol}{2}
+        \cvsection{Experience}
 
-\cvevent{Research Assistant}{University of Calgary}{April 2023 -- Ongoing}{Calgary, Alberta}
-\begin{itemize}
-\item Developer for the GEARS game
-\item Using React, Typescript, and Spring Boot
-\end{itemize}
+        \cvevent{Research Assistant}{University of Calgary}{April 2023 -- Ongoing}{Calgary, Alberta}
+        \begin{itemize}
+            \item Developer for a point and click adventure game (GEARS, see below)
+            \item Using React, Typescript, and Spring Boot
+        \end{itemize}
 
-\divider
+        \divider
 
-\cvevent{Customer Service Cashier}{Calgary Co-op}{July 2021 -- Ongoing}{Calgary, Alberta}
-\begin{itemize}
-\item Assist customers with transactions, membership details, and lottery sales.
-\item Balance store's registers, lottery sales, and promotional item sales.
-\end{itemize}
+        \cvevent{Customer Service Cashier}{Calgary Co-op}{July 2021 -- Ongoing}{Calgary, Alberta}
+        \begin{itemize}
+            \item Assist customers with transactions, membership details, and lottery sales.
+            \item Balance store's registers, lottery sales, and promotional item sales.
+        \end{itemize}
 
-\cvsection{Projects}
+        \cvsection{Projects}
 
-\cvevent{GEARS}{Gearing up for Education, Achieving Real-world Success}{}{University of Calgary}
-\begin{itemize}
-\item Web based point and click adventure game
-\item Helping high school students with learning disabilities and ADHD transition to postsecondary
-\end{itemize}
+        \cvevent{GEARS}{Gearing up for Education, Achieving Real-world Success}{}{University of Calgary}
+        \begin{itemize}
+            \item Web based point and click adventure game
+            \item Helping high school students with learning disabilities and ADHD transition to postsecondary
+        \end{itemize}
 
-\divider
+        \divider
 
-\cvevent{KappaEngine}{Simple LWJGL Game Engine}{}{Personal Project}
-\begin{itemize}
-\item Simple game engine in Java using LWJGL OpenGL bindings to learn graphics programming
-\item Created simple minecraft clone using the engine in a few weeks.
-\end{itemize}
+        \cvevent{KappaEngine}{Simple LWJGL Game Engine}{}{Personal Project}
+        \begin{itemize}
+            \item Simple game engine in Java using LWJGL OpenGL bindings to learn graphics programming
+            \item Created simple minecraft clone using the engine in a few weeks.
+        \end{itemize}
 
-\medskip
+        \divider
 
-\cvsection{Education}
+        \cvevent{Software Engineering 300 - Group Project}{Control Software for a Virtual Self Checkout Station}{}{University of Calgary}
+        \begin{itemize}
+            \item Project manager, lead developer, and software designer for a group project of 23 people creating a simulated self checkout machine.
+            \item Includes a user interface and a state machine to control the hardware of the simulation.
+        \end{itemize}
 
-\cvevent{B.Sc Computer Science}{University of Calgary}{Sept 2022 -- Ongoing}{}
+        \newpage
 
-\divider
+        \cvsection{Awards}
 
-\cvevent{High School Diploma}{Calgary Board of Education}{June 2022}{}
+        \cvachievement{\faGraduationCap}{Deans List}{Was included in the Faculty of Science Dean's List at The University of Calgary in the 2022/2023 and 2023/2024 school years.}
 
-%% Switch to the right column. This will now automatically move to the second
-%% page if the content is too long.
-\switchcolumn
+        \divider
 
-\cvsection{Most Proud of}
+        \cvachievement{\faDollarSign}{Presidents Admission Scholarship}{Awarded by the Univeristy of Calgary for outstanding academic achievement.}
 
-\cvachievement{\faGraduationCap}{4.00 GPA}{in first year computer science courses}
+        \divider
 
-\divider
+        \cvachievement{\faBook}{High School Awards}{Recieved awards in Computer Science, Physics, English, and Social Studies for outstanding academic performance.}
 
-\cvachievement{\faCode}{Custom Desktop Shell}{Custom desktop shell using AGS and GTK for the Hyprland window manager}
+        \divider
 
-\divider
+        \cvachievement{\faBook}{Honors with Distinction}{Recieved honors with distinction in all 3 years of high school for ataining an overall average of 90\% or higher in each year.}
 
-\cvachievement{\faMusic}{WAMSB World Champion}{Got first place in the world marching band competition with the Stampede Showband}
+        \divider
+        
+        \cvachievement{\faBook}{Kayla Gordon Award}{Recieved the highest award from my Middle School for outstanding service, leadership, citizenship and involvement.}
 
-\cvsection{Strengths}
+        %% Switch to the right column. This will now automatically move to the second
+        %% page if the content is too long.
+        \switchcolumn
 
-\cvtag{Hard-working}
-\cvtag{Eye for detail}\\
-\cvtag{Patient}
+        \cvsection{Education}
 
-\divider\smallskip
+        \cvevent{B.Sc Computer Science}{University of Calgary}{Sept 2022 -- Ongoing}{}
 
-\cvtag{Frontend Development}
-\cvtag{Backend Development}\\
-\cvtag{Mathematics}
+        \divider
 
-\cvsection{Programming \\[.2cm] Languages}
+        \cvevent{High School Diploma}{Dr. EP Scarlett High School}{June 2022}{}
 
-\cvskill{Typescript}{5}
-\divider
+        \cvsection{Accomplishments}
 
-\cvskill{Java}{4}
-\divider
+        \cvachievement{\faGraduationCap}{4.00 GPA}{in first year computer science courses}
 
-\cvskill{C}{3.5} %% Supports X.5 values.
+        \divider
 
-\cvsection{References}
+        \cvachievement{\faGraduationCap}{95\% High School Average}{Attained an overall average of 95\% in grade 12.}
 
-\textcolor{red}{Need to ask before publishing...}
+        \divider
 
-\cvref{Prof.\ Richard Zhao Ph.D}{University of Calgary}{richard.zhao1@ucalgary.ca}
-{}
+        \cvachievement{\faCogs}{President of High School Robotics Club}{Showed leadership by helping run and organize the team, assisting those who needed help.}
 
-\divider
+        \divider
 
-\textcolor{red}{Need to ask before publishing...}
+        \cvachievement{\faMusic}{WAMSB World Champion}{Demonstated teamwork, cooperation, and hard work by recieving first place in the world marching competition with the Calgary Stampede Showband.}
 
-\cvref{Prof.\ Meadow Schroeder Ph.D}{University of Calgary}{schroedm@ucalgary.ca}
-{}
+        \cvsection{Programming \\[2mm] Languages}
 
-\divider
+        \cvskill{Typescript}{4.5}
+        \divider
 
-\textcolor{red}{Need to ask before publishing...}
+        \cvskill{Java}{4}
+        \divider
 
-\cvref{Damon Smith}{Manager, Calgary Co-op}{dsmith@calgarycoop.com}
-{}
+        \cvskill{C}{3.5}
+        \divider
 
-%% Yeah I didn't spend too much time making all the
-%% spacing consistent... sorry. Use \smallskip, \medskip,
-%% \bigskip, \vspace etc to make adjustments.
-\medskip
+        \cvskill{Nix}{3}
+
+        \newpage
+
+        \cvsection{Strengths}
+
+        \cvtag{Hard-working}
+        \cvtag{Eye for detail}
+        \cvtag{Patient}
+
+        \divider\smallskip
+
+        \cvtag{Frontend Development}\\
+        \cvtag{Backend Development}
+        \cvtag{Mathematics}
+
+        \cvsection{References}
+
+        \textcolor{red}{Need to ask before publishing...}
+
+        \cvref{Prof.\ Richard Zhao Ph.D}{University of Calgary}{richard.zhao1@ucalgary.ca}
+        {}
+
+        \divider
+
+        \textcolor{red}{Need to ask before publishing...}
+
+        \cvref{Prof.\ Meadow Schroeder Ph.D}{University of Calgary}{schroedm@ucalgary.ca}
+        {}
+
+        \divider
+
+        \textcolor{red}{Need to ask before publishing...}
+
+        \cvref{Damon Smith}{Manager, Calgary Co-op}{dsmith@calgarycoop.com}
+        {}
+
+        %% Yeah I didn't spend too much time making all the
+        %% spacing consistent... sorry. Use \smallskip, \medskip,
+        %% \bigskip, \vspace etc to make adjustments.
+        \medskip
 
 
-\end{paracol}
+    \end{paracol}
 
 
 \end{document}
