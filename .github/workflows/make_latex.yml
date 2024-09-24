@@ -24,7 +24,7 @@ jobs:
           draft: false
           prerelease: false
       - name: Upload letter
-        id: upload-release-asset 
+        id: upload-release-asset-letter
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -34,7 +34,7 @@ jobs:
           asset_name: resume_letter.pdf
           asset_content_type: application/pdf
       - name: Upload a4
-        id: upload-release-asset 
+        id: upload-release-asset-a4
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -44,7 +44,7 @@ jobs:
           asset_name: resume_a4.pdf
           asset_content_type: application/pdf
       - name: Upload legal
-        id: upload-release-asset 
+        id: upload-release-asset-legal
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
