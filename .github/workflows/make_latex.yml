@@ -10,7 +10,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: |
-            latter.tex
+            letter.tex
             a4.tex
             legal.tex
       - name: Create Release
