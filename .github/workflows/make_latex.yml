@@ -23,7 +23,7 @@ jobs:
           release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
-      - name: Upload Release Asset (letter)
+      - name: Upload letter
         id: upload-release-asset 
         uses: actions/upload-release-asset@v1
         env:
@@ -33,7 +33,7 @@ jobs:
           asset_path: ./letter.pdf
           asset_name: resume_letter.pdf
           asset_content_type: application/pdf
-      - name: Upload Release Asset (a4)
+      - name: Upload a4
         id: upload-release-asset 
         uses: actions/upload-release-asset@v1
         env:
@@ -43,7 +43,7 @@ jobs:
           asset_path: ./a4.pdf
           asset_name: resume_a4.pdf
           asset_content_type: application/pdf
-      - name: Upload Release Asset (legal)
+      - name: Upload legal
         id: upload-release-asset 
         uses: actions/upload-release-asset@v1
         env:
