@@ -15,7 +15,10 @@ jobs:
             legal.tex
       - name: Get current date
         id: date
-        run: echo "name=date::$(date +'%Y%m%d-%H%M%S') >> $GITHUB_OUTPUT"
+        run: echo "date=$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_OUTPUT
+      - name: List files
+        id: list
+        run: find .
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
