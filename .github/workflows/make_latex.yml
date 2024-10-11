@@ -25,6 +25,6 @@ jobs:
           name: "Resume @ ${{ steps.date.outputs.date }}"
           tag_name: "resume-${{ steps.date.outputs.date }}"
           files: |
-             resume_letter.pdf
-             resume_a4.pdf
-             resume_legal.pdf
+             ./resume_letter.pdf
+             ./resume_a4.pdf
+             ./resume_legal.pdf
