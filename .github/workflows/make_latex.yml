@@ -18,9 +18,9 @@ jobs:
         run: echo "name=date::$(date +'%Y%m%d-%H%M%S') >> $GITHUB_OUTPUT"
       - name: Release
         uses: softprops/action-gh-release@v2
-        name: Resume @ ${{ steps.date.outputs.date }}
-        tag_name: ${{ steps.date.outputs.date }}
         with:
+          name: Resume @ ${{ steps.date.outputs.date }}
+          tag_name: ${{ steps.date.outputs.date }}
           files: |
              resume_letter.pdf
              resume_a4.pdf
