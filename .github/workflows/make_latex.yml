@@ -16,43 +16,12 @@ jobs:
       - name: Get current date
         id: date
         run: echo "name=date::$(date +'%Y%m%d-%H%M%S') >> $GITHUB_OUTPUT"
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        name: Resume @ ${{ steps.date.outputs.date }}
+        tag_name: ${{ steps.date.outputs.date }}
         with:
-          release_name: Resume @ ${{ steps.date.outputs.date }}
-          tag_name: ${{ github.ref }}
-          draft: false
-          prerelease: false
-      - name: Upload letter
-        id: upload-release-asset-letter
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./letter.pdf
-          asset_name: resume_letter.pdf
-          asset_content_type: application/pdf
-      - name: Upload a4
-        id: upload-release-asset-a4
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./a4.pdf
-          asset_name: resume_a4.pdf
-          asset_content_type: application/pdf
-      - name: Upload legal
-        id: upload-release-asset-legal
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./legal.pdf
-          asset_name: resume_legal.pdf
-          asset_content_type: application/pdf
+          files: |
+             resume_letter.pdf
+             resume_a4.pdf
+             resume_legal.pdf
