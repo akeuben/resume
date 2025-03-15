@@ -1,210 +1,73 @@
-# AltaCV, yet another LaTeX CV/Résumé class
+# Avery Keuben's CV
 
-v1.7 (9 Aug 2023), by LianTze Lim (liantze@gmail.com)
-
-* v1.7 (9 Aug 2023) changes:
-  - `\itemmarker` and `\ratingmarker` renamed to `\cvItemMarker` and `\cvRatingMarker`
-  - Added `\cvLocationMarker` and `\cvDateMarker` so that these icons in `\cvevent`
-    can be re-defined
-  - Added `\locationname` and `\datename` for replacement text of the location and date
-    markers in `\cvevent`
-  - Other tweaks with `accsupp`
-* Added `\mynames{...}` to specify names to be highlighted in the publication list on 3 Nov 2022
-* Starred `\NewInfoField*` command to handle Mastodon; Icons, `\cvskills`, `\wheelchart` have "copyable" text values; `\cvskill` supports numerical values {0.5, 1, ..., 4.5, 5} on 21 May 2021
-* Moved `biblatex`-related code to `*.cfg` files for easier edit on 8 May 2021
-* Removed dependency on `academicons` on 12 Apr 2021
-* Clickable hyperlinked info fields added on 10 May 2020
-* Sample file with new `paracol` layout added on 2 February 2020
-
-(Thanks to [Nur](https://github.com/nurh) for the name.)
-
-It all started with this:
-
-[<img src="tweet-that-started-this.png" width="500px">](https://twitter.com/Leonduck/status/764281546408923136)
-
-Leonardo was talking about a [résumé of Marissa Mayer that Business Insider put together](http://www.businessinsider.my/a-sample-resume-for-marissa-mayer-2016-7/) using [enhancv.com](https://enhancv.com).
-I _knew_ I had to do something about it. And so AltaCV was born.
-
-## Samples
-
-This is how the re-created résumé looks like ([view/open on Overleaf](https://www.overleaf.com/latex/examples/recreating-business-insiders-cv-of-marissa-mayer-using-altacv/gtqfpbwncfvp)):
-
-<img src="mmayer.png" alt="Marissa Mayer's résumé, re-created with AltaCV" width="600px">
-
-Though if you're creating your own CV/résumé, you'd probably prefer using the basic template ([view/open on Overleaf](https://www.overleaf.com/latex/templates/altacv-template/trgqjpwnmtgv)):
-
-<img src="sample.png" alt="sample barebones AltaCV template" width="600px">
+- Phone: +1 403 922 5169
+- Email: [avery1516@gmail.com](mailto:avery1516@gmail.com)
+- Location: Calgary, AB
+- Website: [akeuben.github.io](https://akeuben.github.io/)
+- LinkedIn: [avery-keuben](https://linkedin.com/in/avery-keuben)
+- GitHub: [akeuben](https://github.com/akeuben)
 
 
-## Requirements and Compilation
+# Summary of Skills
 
-* pdflatex + biber + pdflatex
-* AltaCV uses [`fontawesome5`](http://www.ctan.org/pkg/fontawesome5).
-* Use the `normalphoto` option to get normal (i.e. non-circular) photos.
-* As of v1.2 you can add multiple photos on the left or right: `\photoL{2cm}{logo1}` and `\photoR{2.5cm}{logo2,photo}`. (`\photo` will work like `\photoR`.) Separate your image filenames with commas _without_ spaces.
-* Use the `ragged2e` option to activate hyphenations while keeping text left-justified; line endings will thus be less jagged and more aesthetically pleasing.
-* As of v1.3 the `withhyper` document class option will make the "personal info" fields into clickable hyperlinks (where it makes sense). See below for more details.
-* Can now be compiled with pdflatex, XeLaTeX and LuaLaTeX!
-  * Note that to compile with XeLaTeX, you should use a command line as follows, per [the `pdfx` documentation](http://mirrors.ctan.org/macros/latex/contrib/pdfx/pdfx.pdf): `xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex`
-* The samples here use the [Lato](http://www.latofonts.com/lato-free-fonts/) and [Roboto Slab fonts](https://github.com/googlefonts/robotoslab). Feel free to use a different typeface package instead—often a different typeface will change the entire CV's feel.
+- Computer science student with a strong understanding of software development, design and testing.
+- Strong understanding of Java, C/C++, Javascript/Typescript
+- Experience using React, Unity
+- Strong leader and communicator, leading a team of 23 members through a software development task involving design, implementation, testing, and client communication.
+- Knowledge of algorithms, data structures, object-oriented design, and procedural programming
+- Committed to continuous learning and development in programming, including staying current with emerging technologies and industry trends
+# Education
 
-## `sample.tex` ##
+## University of Calgary, B.Sc in Computer Science
 
-This file was first created as `sample-alt.tex` on 2 Feb 2020. **It is the default sample LaTeX file since 10 May 2020.**
+- Sept 2022 – present
+- Calgary, AB
+- GPA: 3.8/4.0
+- Science Internship Program
+- Awards: Faculty of Science Dean's List, President's Admission Scholarship, Jason Lang Scholarship, University of Calgary Transdisciplinary Connector Grant
 
-Many users have overlooked the optional argument of `\cvsection` to insert the right sidebar contents, and often confused that the right sidebar doesn't automatically break across pages. This new layout uses the `paracol` package for typesetting the left and right columns that _can_ break across pages. It also makes changing the column widths easier:
+# Experience
 
-```latex
-%% Set the left/right column width ratio to 6:4.
-\columnratio{0.6}
+## University of Calgary, Research Assistant
 
-% Start a 2-column paracol. Both the left and right columns will automatically
-% break across pages if things get too long.
-\begin{paracol}{2}
-\cvsection{Experience}
-...
-... END OF LEFT COLUMN CONTENTS ...
+- Apr 2023 – present
+- Calgary, AB
+- Developed a web-based point-and-click adventure game to help students with learning disabilities and ADHD transition to a post-secondary learning environment.
+- Implemented a custom web-based game engine that significantly increased development ease and speed.
+- Respond to feedback from user testing sessions by identifying and resolving issues, enhancing gameplay and accessibility to better support students with learning disabilities and ADHD.
 
-% Now switch to the right column.
-\switchcolumn
-\cvsection{Education}
-...
-...END OF RIGHT COLUMN CONTENTS ...
-\end{paracol}
-```
-You can also use `\swithcolumn*` for "synchronising" the columns, as well as other commands from the `paracol` package. See the [`paracol` package documentation](http://texdoc.net/pkg/paracol) for further details.
+## Calgary Co-Op, Customer Service Cashier
 
-**You do not need use the `fullwidth` environment nor use optional arguments with `\cvsection` with this new template.**
+- July 2021 – present
+- Calgary, AB
+- Ensured precise and timely order fulfillment for eCommerce transactions resulting in quick turnaround times for online orders, with an average rate of 2 items per minute.
+- Assisted in maintaining accurate cash balancing procedures by ensuring correct entry of till data, contributing to overall accountability and minimizing discrepancies during reconciliations.
+- Proactively identified and resolved customer complaints and transaction errors, demonstrating strong problem-solving skills in a fast-paced environment.
 
-## Clickable Info fields
+# Projects
 
-As of v1.3, the `withhyper` document class option will load the `hyperref` package, and make fields in the personal detail fields into clickable hyperlinks (where it makes sense anyway).
+## Video Game Backlog Manager
 
-*BIG CAVEAT:* Remember that not all readers may want to click on hyperlinks in PDFs. You may therefore sometimes want to _remove_ `withhyper`, and spell out the field URL details a bit more completely, e.g. `\github{github.com/your-id}`.
+- 2024
+- Working in a small team to implement a social website to allow tracking of video game backlogs.
+- Effectively designing and implementing a robust database driven system to effectively manage multiple large video game backlogs, enhancing data organization and retrieval.
 
-Anyway assuming that you _do_ keep `withhyper` enabled: For each field e.g. `\homepage{foobar.com}`, a `\homepagesymbol` has been defined, and the clickable hyperlink is generated by prepending the `\homepagehyperprefix` to `foobar.com`. The `\homepgehyperprefix` is defined to be `\https://`, so this generates the hyperlink `https://foobar.com`.
+## Self Checkout Software
 
-If your homepage doesn't use HTTPS yet, or if you want to use a different symbol, you can re-define them with
-```latex
-\renewcommand{\homepagehyperprefix}{http://}
-\renewcommand{\homepagesymbol}{\faLink}
-```
+- 2024
+- Lead a team of 23 members in the design and implementation for a simulated self-checkout machine, fostering collaboration and problem-solving.
+- Designed the software architecture ensuring scalability and efficiency allowing us to adapt within a couple hours to changes in the project specification
+- Conducted thorough unit testing and manual debugging to create a bug-free experience for end-users.
 
+## 3D Game Engine
 
-## New Information Fields ####
+- 2021
+- Created a multi-platform 3D game engine in Java using OpenGL to ease the creation of future game projects.
+- Implemented a voxel-based demo with procedural world generation.
 
-I've decided against adding definitions for too many fields and symbols in the `.cls` itself; otherwise we'll have all possible platforms in the world (and more services are born everyday!) within `altacv.cls` before we know it.
+## Circuit Simulator
 
-You can actually just typeset your own arbitrary information fields using the `\printinfo{symbol}{detail}[optional hyperlink prefix]` command within `\personalinfo`:
+- 2022
+- React-based web app to edit and inspect resistor-based circuit networks in parallel or series.
+- Incorporated 3D view with accurate resistor models corresponding to resistance.
 
-````latex
-\printinfo{\faPaw}{Hey ho!}
-\printinfo{\faGitLab}{your-handle}[https://gitlab.com/]
-````
-
-Or if you really prefer, you can define a new field yourself with `\NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix]` before  using it:
-
-````latex
-\NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
-\gitlab{your_id}
-````
-
-For services and platforms like Mastodon where there isn't a straightforward relation between the more popular user ID or nickname and the hyperlink, you can use `\printinfo` directly e.g.
-
-```latex
-\printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
-```
-
-But if you absolutely want to create new dedicated info fields for such platforms, then use `\NewInfoField*` with a star:
-
-```latex
-\NewInfoField*{mastodon}{\faMastodon}
-```
-
-then you can use `\mastodon` with TWO arguments where the 2nd argument is the full hyperlink.
-
-```latex
-\mastodon{@username@instance}{https://instance.url/@username}
-```
-
-
-## Configurable colours
-
-Use `\colorlet` or `\definecolor` to change these; see examples 
-in preamble of `sample.tex`.
-* `accent`
-* `emphasis`
-* `heading`
-* `headingrule`
-* `subheading`
-* `body`
-* `name`
-* `tagline`
-
-## Configurable fonts
-
-Use `\renewcommand` to change these; see examples in preamble of
-`sample.tex`.
-* `\namefont`
-* `\taglinefont`
-* `\personalinfofont`
-* `\cvsectionfont`
-* `\cvsubsectionfont`
-
-## Configurable icons
-
-Use `\renewcommand` to change these; see examples in preamble of
-`sample.tex`.
-* `\cvItemMarker` (bullets for `itemize`)
-* `\cvRatingMarker` (for `\cvskill`)
-* `\cvDateMarker` (for date in `\cvevent`)
-* `\cvLocationMarker` (for location in `\cvevent` and `\location`)
-
-
-## Is this template ATS-friendly?
-There is some discussion about this in issue #76. No actual claims are made, because we don't really know how each ATS system works. But this template uses `accsupp` to add replacement text for the icons, which may help — e.g. the `\faGithub` icon rendered in the PDF would copy-and-paste from Acrobat Reader, as exactly the text `\faGithub`. 
-
-You could try running `pdftotext -raw sample.pdf` to view the text-only version of the CV, with the columnar layout removed.
-
-Alternatively running `pdftotext -layout sample.pdf` to view the text-only version in a pseudo-two-column layout.
-
-In particular `\locationname` and `\datename` hold the replacement text for the location and date/duration icon in `\cvevent`. These can be re-defined especially if your CV is in a non-English language, e.g. Spanish (see commented examples in preamble of `sample.tex`):
-
-```latex
-\renewcommand{\locationname}{Ubicación}
-\renewcommand{\datename}{Fecha}
-```
-
----
-
-## `legacy/sample-old.tex` (for historical record only)
-
-This was the original sample template file until 5 May 2020. The right sidebar is actually a _`marginpar`_, so it doesn't support footnote and cannot automatically break across pages if it's too long. You would need to split your right sidebar contents into separate files e.g. `p1sidebar.tex` and `p2sidebar.tex`, and insert them as the optional argument of the `\cvsection{...}` that you want to align them with:
-
-```latex
-\cvsection[p1sidebar]{Experience}
-...
-... END OF FIRST PAGE OF YOUR CV ...
-\cvsection[page2sidebar]{Publications}
-...
-```
-
-This assumes that the next page's main column would start immediately with a `\cvsection`, so that the top of your right sidebar contents also appear at the top of the page. Now if the _next_ page doesn't start with a `\cvsection` but you'd still like to add a sidebar, then use this command on the _current_ page to add it. The optional argument lets you pull up the sidebar a bit so that it looks aligned with the top of the main column:
-
-```latex
-\addnextpagesidebar[-1ex]{page3sidebar}
-```
-
-If you want to change the left and right columns' widths, you'll need to tinker with the `right` (distance from paper's right edge until the main column's right edge) and `marginparwidth` (width of the right sidebar) options in the `\geometry` line. For example, to make the right sidebar wider by 2cm, you could use
-
-```latex
-%% original was right=9cm, marginparwidth=6.8cm
-\geometry{left=1cm,right=11cm,marginparwidth=8.8cm,marginparsep=1.2cm,top=1cm,bottom=1cm}
-```
-as well as doing a bit of arithmetic when you're making the header to get it full-width, i.e. reducing the sidebar by 2cm and extending the main column by 2cm.
-
-```latex
-\begin{adjustwidth}{}{-10cm}  %% original was -8cm
-\makecvheader
-\end{adjustwidth}
-```
