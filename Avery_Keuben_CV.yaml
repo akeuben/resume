@@ -1,0 +1,217 @@
+cv:
+  name: Avery Keuben
+  location: Calgary, AB
+  email: avery1516@gmail.com
+  phone: +1-403-922-5169
+  website: "https://akeuben.github.io"
+  social_networks:
+    - network: LinkedIn
+      username: avery-keuben
+    - network: GitHub
+      username: akeuben
+  sections:
+    "summary of skills":
+      - bullet: Computer science student with a strong understanding of software development, design and testing.
+      - bullet: Strong understanding of Java, C/C++, Javascript/Typescript
+      - bullet: Experience using React, Unity
+      - bullet: Strong leader and communicator, leading a team of 23 members through a software development task involving design, implementation, testing, and client communication.
+      - bullet: Knowledge of algorithms, data structures, object-oriented design, and procedural programming
+      - bullet: Committed to continuous learning and development in programming, including staying current with emerging technologies and industry trends
+    education:
+      - institution: University of Calgary
+        area: Computer Science
+        degree: B.Sc
+        date:
+        start_date: 2022-09
+        end_date: present
+        location: Calgary, AB
+        summary:
+        highlights:
+          - "GPA: 3.8/4.0"
+          - Science Internship Program
+          - "Awards: Faculty of Science Dean's List, President's Admission Scholarship, Jason Lang Scholarship, University of Calgary Transdisciplinary Connector Grant"
+    experience:
+      - company: University of Calgary
+        position: Research Assistant
+        date:
+        start_date: 2023-04
+        end_date: present
+        location: Calgary, AB
+        summary: 
+        highlights:
+          - Developed a web-based point-and-click adventure game to help students with learning disabilities and ADHD transition to a post-secondary learning environment.
+          - Implemented a custom web-based game engine that significantly increased development ease and speed.
+          - Respond to feedback from user testing sessions by identifying and resolving issues, enhancing gameplay and accessibility to better support students with learning disabilities and ADHD.
+      - company: Calgary Co-Op
+        position: Customer Service Cashier
+        date:
+        start_date: 2021-07
+        end_date: present
+        location: Calgary, AB
+        summary:
+        highlights:
+          - Ensured precise and timely order fulfillment for eCommerce transactions resulting in quick turnaround times for online orders, with an average rate of 2 items per minute.
+          - Assisted in maintaining accurate cash balancing procedures by ensuring correct entry of till data, contributing to overall accountability and minimizing discrepancies during reconciliations.
+          - Proactively identified and resolved customer complaints and transaction errors, demonstrating strong problem-solving skills in a fast-paced environment.
+    projects:
+      - name: 'Video Game Backlog Manager'
+        date: 2024 
+        highlights:
+          - Working in a small team to implement a social website to allow tracking of video game backlogs. 
+          - Effectively designing and implementing a robust database driven system to effectively manage multiple large video game backlogs, enhancing data organization and retrieval.
+      - name: Self Checkout Software
+        date: 2024
+        highlights:
+          - Lead a team of 23 members in the design and implementation for a simulated self-checkout machine, fostering collaboration and problem-solving.
+          - Designed the software architecture ensuring scalability and efficiency allowing us to adapt within a couple hours to changes in the project specification
+          - Conducted thorough unit testing and manual debugging to create a bug-free experience for end-users.
+      - name: '3D Game Engine'
+        date: 2021
+        highlights:
+          - Created a multi-platform 3D game engine in Java using OpenGL to ease the creation of future game projects.
+          - Implemented a voxel-based demo with procedural world generation.
+      - name: 'Circuit Simulator'
+        date: 2022
+        highlights:
+          - React-based web app to edit and inspect resistor-based circuit networks in parallel or series.
+          - Incorporated 3D view with accurate resistor models corresponding to resistance.
+design:
+  theme: engineeringresumes
+  page:
+    size: us-letter
+    top_margin: 1cm
+    bottom_margin: 1cm
+    left_margin: 1cm
+    right_margin: 1cm
+    show_page_numbering: false
+    show_last_updated_date: true
+  colors:
+    text: rgb(0, 0, 0)
+    name: rgb(0, 0, 0)
+    connections: rgb(0, 0, 0)
+    section_titles: rgb(0, 0, 0)
+    links: rgb(0, 0, 0)
+    last_updated_date_and_page_numbering: rgb(128, 128, 128)
+  text:
+    font_family: XCharter
+    font_size: 10pt
+    leading: 0.6em
+    alignment: justified
+    date_and_location_column_alignment: right
+  links:
+    underline: true
+    use_external_link_icon: false
+  header:
+    name_font_family: XCharter
+    name_font_size: 25pt
+    name_bold: false
+    photo_width: 3.5cm
+    vertical_space_between_name_and_connections: 0.7cm
+    vertical_space_between_connections_and_first_section: 0.7cm
+    horizontal_space_between_connections: 0.5cm
+    connections_font_family: XCharter
+    separator_between_connections: '|'
+    use_icons_for_connections: true
+    alignment: center
+  section_titles:
+    type: with-full-line
+    font_family: XCharter
+    font_size: 1.2em
+    bold: true
+    small_caps: false
+    line_thickness: 0.5pt
+    vertical_space_above: 0.55cm
+    vertical_space_below: 0.3cm
+  entries:
+    date_and_location_width: 4.15cm
+    left_and_right_margin: 0.25cm
+    horizontal_space_between_columns: 0.1cm
+    vertical_space_between_entries: 0.2cm
+    allow_page_break_in_sections: true
+    allow_page_break_in_entries: true
+    short_second_row: false
+    show_time_spans_in: []
+  highlights:
+    bullet: •
+    top_margin: 0.25cm
+    left_margin: 0cm
+    vertical_space_between_highlights: 0.19cm
+    horizontal_space_between_bullet_and_highlight: 0.3em
+    summary_left_margin: 0cm
+  entry_types:
+    one_line_entry:
+      template: '**LABEL:** DETAILS'
+    education_entry:
+      main_column_first_row_template: '**INSTITUTION**, DEGREE in AREA -- LOCATION'
+      degree_column_template:
+      degree_column_width: 1cm
+      main_column_second_row_template: |-
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column_template: DATE
+    normal_entry:
+      main_column_first_row_template: '**NAME** -- **LOCATION**'
+      main_column_second_row_template: |-
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column_template: DATE
+    experience_entry:
+      main_column_first_row_template: '**POSITION**, COMPANY -- LOCATION'
+      main_column_second_row_template: |-
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column_template: DATE
+    publication_entry:
+      main_column_first_row_template: '**TITLE**'
+      main_column_second_row_template: |-
+        AUTHORS
+        URL (JOURNAL)
+      main_column_second_row_without_journal_template: |-
+        AUTHORS
+        URL
+      main_column_second_row_without_url_template: |-
+        AUTHORS
+        JOURNAL
+      date_and_location_column_template: DATE
+locale:
+  language: en
+  phone_number_format: national
+  page_numbering_template: NAME - Page PAGE_NUMBER of TOTAL_PAGES
+  last_updated_date_template: Last updated in TODAY
+  date_template: MONTH_ABBREVIATION YEAR
+  month: month
+  months: months
+  year: year
+  years: years
+  present: present
+  to: –
+  abbreviations_for_months:
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - June
+    - July
+    - Aug
+    - Sept
+    - Oct
+    - Nov
+    - Dec
+  full_names_of_months:
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+rendercv_settings:
+  date: '2025-03-15'
+  render_command:
+  bold_keywords: []
