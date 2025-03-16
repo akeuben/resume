@@ -26,7 +26,7 @@
 - Science Internship Program
 - Awards: Faculty of Science Dean's List, President's Admission Scholarship, Jason Lang Scholarship, University of Calgary Transdisciplinary Connector Grant
 
-# Professional Experience
+# Employment Experience
 
 ## University of Calgary, Research Assistant
 
