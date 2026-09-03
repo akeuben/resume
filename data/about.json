@@ -1,0 +1,19 @@
+{
+  "name": {
+    "first": "Avery",
+    "last": "Keuben"
+  },
+  "positions": [
+    "Software Enginner",
+    "Game Developer"
+  ],
+  "links": [
+    {"icon": "github", "text": "akeuben", "url": "https://github.com/akeuben"},
+    {"icon": "linkedin", "text": "in/avery-keuben", "url": "https://linkedin.com/in/avery-keuben"},
+    {"icon": "link", "text": "akeuben.ca", "url": "https://akeuben.ca"}
+  ],
+  "contact": [
+    {"icon": "location-pin", "text": "Calgary AB, Canada"},
+    {"icon": "envelope", "text": "avery1516@gmail.com", "url": "mailto:avery1516@gmail.com"}
+  ]
+}

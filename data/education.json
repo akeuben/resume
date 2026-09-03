@@ -1,0 +1,21 @@
+[
+  {
+    "title": "B.Sc Computer Science",
+    "location": "Calgary, AB",
+    "institution": "University of Calgary",
+    "date": {
+      "start": "September 2022",
+      "end": "May 2026"
+    },
+    "notes": [
+      "With Distinction",
+      "Minor in Mathematics"
+    ],
+    "courses": [
+      "Quantum Computing",
+      "Database Management",
+      "Distributed Systems",
+      "Software Engineering"
+    ]
+  }
+]

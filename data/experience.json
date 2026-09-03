@@ -1,0 +1,43 @@
+[
+  {
+    "title": "Lead Software Developer",
+    "company": "Serious Games Research",
+    "location": "Calgary, AB",
+    "date": {
+      "start": "April 2023",
+      "end": "August 2026"
+    },
+    "notes": [
+      "Developed a web-based point-and-click adventure game to help students with learning disabilities and ADHD transition to a postsecondary learning environment",
+      "Implemented a custom web-based game engine that significantly increased development ease and speed",
+      "Respond to feedback from user testing sessions by identifying and resolving issues, enhancing gameplay and accessibility to better support students with learning disabilities and ADHD."
+    ],
+    "skills": [
+      "React",
+      "NodeJS",
+      "Web Accessibility",
+      "Java",
+      "Websockets",
+      "SQL"
+    ]
+  },
+  {
+    "title": "Customer Service Cashier",
+    "company": "Calgary Co-op",
+    "location": "Calgary, AB",
+    "date": {
+      "start": "September 2022"
+    },
+    "notes": [
+      "Proactively identified and resolved customer complaints and transaction errors, demonstrating strong problem-solving skills in a fast-paced environment.",
+      "Assisted in maintaining accurate cash balancing procedures by ensuring correct entry of till data, contributing to overall accountability and minimizing discrepancies during reconciliations."
+    ],
+    "skills": [
+      "Customer Service",
+      "Communication",
+      "Teamwork",
+      "Balancing",
+      "Accounting"
+    ]
+  }
+]

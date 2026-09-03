@@ -1,0 +1,116 @@
+[
+  {
+    "title": "Python J-- Compiler",
+    "id": "j--",
+    "role": "Developer",
+    "date": 2026,
+    "github": "akeuben/CPSC-411",
+    "notes": [
+      "Implemented a grammer in Antlr4 for parser generation",
+      "Utilized python for semantic analysis and code generation targeting MIPS assembly",
+      "Matched all 78 unit tests and matched reference compiler on all outputs"
+    ],
+    "skills": [
+      "python",
+      "antlr4",
+      "MIPS assembly",
+      "grammars",
+      "parsers",
+      "code generation"
+    ]
+  },
+  {
+    "title": "University Schedule AI Search System",
+    "id": "search",
+    "role": "Developer",
+    "date": 2025,
+    "github": "akeuben/CPSC-433-Project",
+    "notes": [
+      "Implemented a constraint-satisfaction search system to generate valid university schedules in Java",
+      "Took advantage of heuristics to find valid solutions in under 5 seconds on large inputs.",
+      "Used a threaded-implementation to increase search speed, reaching an average of 14,000 nodes/second on a low-power device."
+    ],
+    "skills": [
+      "java",
+      "search",
+      "multithreading",
+      "flamegraph"
+    ]
+  },
+  {
+    "title": "Self Checkout Software",
+    "id": "sco",
+    "date": 2024,
+    "role": "Team Lead/Architect/Developer",
+    "github": "akeuben/TheLocalMarketplace",
+    "notes": [
+      "Led a team of 23 members in the design and implementation for a simulated self-checkout machine, fostering collaboration and problem-solving.",
+      "Designed the software architecture ensuring scalability and efficiency allowing us to adapt within a couple hours to changes in the project specification",
+      "Conducted thorough unit testing and manual debugging to create a bug-free experience for end-users.",
+      "Took advantage of Test Driven Development (TDD) to ensure correctness of implementation."
+    ],
+    "skills": [
+      "java",
+      "swing",
+      "unit testing",
+      "UI/UX",
+      "TDD",
+      "agile"
+    ]
+  },
+  {
+    "title": "Multi-user End-to-End Encrypted Chat Application",
+    "id": "ok_messenger",
+    "date": 2025,
+    "role": "Developer",
+    "github": "akeuben/ok_messenger",
+    "notes": [
+      "Developed a custom chat application in Java using the Signal protocol to ensure end-to-end encryption",
+      "Re-implemented core cryptographic protocols including SHA-256, Double Ratchet, AES-256, and HMAC."
+    ],
+    "skills": [
+      "java",
+      "cryptography",
+      "websockets",
+      "swing",
+      "math"
+    ]
+  },
+  {
+    "title": "Video Game Backlog Manager",
+    "id": "backlog",
+    "date": 2024,
+    "github": "akeuben/Goal",
+    "role": "Developer",
+    "notes": [
+      "Working in a small team to implement a social website to allow tracking of video game backlogs.",
+      "Effectively designing and implementing a robust database driven system to effectively manage multiple large video game backlogs, enhancing data organization and retrieval."
+    ],
+    "skills": [
+      "java",
+      "react",
+      "typescript",
+      "apis",
+      "sql",
+      "REST"
+    ]
+  },
+  {
+    "title": "3D Game Engine & Voxel World Demo",
+    "id": "voxel",
+    "date": 2021,
+    "github": "akeuben/MinecraftClone",
+    "role": "Developer",
+    "notes": [
+      "Created a multi-platform 3D game engine in Java using OpenGL to ease the creation of future game projects.",
+      "Implemented a voxel-based demo with procedural world generation."
+    ],
+    "skills": [
+      "java",
+      "opengl",
+      "glsl",
+      "3D graphics",
+      "procedural generation"
+    ]
+  }
+]
