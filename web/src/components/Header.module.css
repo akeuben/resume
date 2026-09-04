@@ -1,0 +1,15 @@
+.header {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header h1 {
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+}
+
+.header p {
+    font-weight: 700;
+}
