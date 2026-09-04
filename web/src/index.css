@@ -1,21 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 :root {
-  --color-background: #ddd;
-  --color-page: white;
-  --color-text: black;
-  --color-shadow: #bbb;
+    --color-background: #ddd;
+    --color-page: white;
+    --color-text: black;
+    --color-shadow: #bbb;
 }
 
 * {
-  margin: 0px;
-  padding: 0px;
-  color: var(--color-text);
-  box-sizing: border-box;
-  text-decoration: none;
-  font-size: 1em;
-  font-family: "libertinus serif", serif;
+    margin: 0px;
+    padding: 0px;
+    color: var(--color-text);
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: "libertinus serif", serif;
+    background: none;
+    border: none;
+    transition: background 0.25s linear, color 0.25s linear;
 }
 
 a {

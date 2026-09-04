@@ -6,12 +6,13 @@ import education from '../../data/education.json'
 import experience from '../../data/experience.json'
 import projects from '../../data/projects.json'
 import ResumeHeader from './components/ResumeHeader'
+import Header from './components/Header'
 import { ResumeSectionBullet, ResumeSection } from './components/ResumeSection'
 import ResumeLink from './components/ResumeLink'
 import type { Item } from "./types/Section.d.ts"
 
 function getPreferredColorScheme() {
-  if (!window.matchMedia || true) return 'light';
+  if (!window.matchMedia) return 'light';
 
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     return 'dark';
@@ -62,6 +63,7 @@ function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>(getPreferredColorScheme())
 
   return <div className={[styles.body, styles[theme]].join(" ")}>
+    <Header theme={theme} setTheme={setTheme} />
     <main className={styles.resume}>
       <ResumeHeader about={about}/>
       <ResumeSectionBullet title="Skills" items={skills} />

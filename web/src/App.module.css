@@ -19,6 +19,30 @@
     max-width: 8.5in;
     min-height: calc(100lvh - 0.66in);
     box-shadow: var(--color-shadow) 0px 0px 10px;
-    margin: 0.33in;
+    margin-top: calc(0.33in + 64px);
+    margin-bottom: 0.33in;
     padding: 0.33in;
+}
+
+@media print {
+
+    .body.dark {
+        --color-text: #000;
+        --color-background: #fff;
+        --color-page: #fff;
+    }
+    
+    .resume {
+        background: white;
+        width: 100vw;
+        max-width: unset;
+        min-height: unset;
+        box-shadow: unset;
+        margin: 0;
+        padding: 0;
+    }
+
+    * {
+        color: black;
+    }
 }
