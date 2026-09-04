@@ -4,7 +4,10 @@
     flex-direction: column;
     align-items: center;
     background: var(--color-page);
-    padding: 10px;
+}
+
+.linkgroup {
+    margin-top: 0.25em;
 }
 
 .header h1 {
