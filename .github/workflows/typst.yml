@@ -1,0 +1,43 @@
+name: Compile Typst PDF and Release
+ 
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "typst/**"
+      - "data/**"
+  workflow_dispatch: {}
+ 
+permissions:
+  contents: write
+ 
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+ 
+      - name: Install Typst
+        uses: typst-community/setup-typst@v3
+        with:
+          typst-version: latest
+ 
+      - name: Compile Typst project
+        run: typst compile ./typst/main.typ ./typst/main.pdf
+ 
+      - name: Set release tag
+        id: tag
+        run: echo "tag=CI-$(date +%Y%m%d)-${{ github.run_number }}" >> "$GITHUB_OUTPUT"
+ 
+      - name: Publish release with PDF artifact
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: ${{ steps.tag.outputs.tag }}
+          files: ./typst/main.pdf
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
