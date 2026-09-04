@@ -1,5 +1,6 @@
 import type { About } from "../types/About";
 import styles from "./Header.module.css"
+import ResumeLink from "./ResumeLink";
 
 export default function Header({about}: {about: About}) {
   return <header className={styles.header}>
@@ -7,5 +8,8 @@ export default function Header({about}: {about: About}) {
     <p>{
         about.positions.join(" · ")
     }</p>
+    <div>
+        {about.links.map(link => <ResumeLink icon={link.icon} text={link.text} url={link.url}/>)}
+    </div>
   </header>
 }

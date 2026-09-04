@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
+  --color-background: #ddd;
+  --color-page: white;
+  --color-text: black;
+  --color-shadow: #bbb;
 }
 
 * {
   margin: 0px;
   padding: 0px;
+  color: var(--color-text);
+  box-sizing: border-box;
 }
