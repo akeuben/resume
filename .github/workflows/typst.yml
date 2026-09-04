@@ -25,7 +25,7 @@ jobs:
           typst-version: latest
  
       - name: Compile Typst project
-        run: typst compile ./typst/main.typ ./typst/main.pdf
+        run: typst compile --root . ./typst/public.typ ./typst/resume.pdf
  
       - name: Set release tag
         id: tag
@@ -36,7 +36,7 @@ jobs:
         with:
           tag_name: ${{ steps.tag.outputs.tag }}
           name: ${{ steps.tag.outputs.tag }}
-          files: ./typst/main.pdf
+          files: ./typst/resume.pdf
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
