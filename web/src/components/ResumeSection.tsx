@@ -5,7 +5,7 @@ import ResumeItem from "./ResumeItem.tsx"
 export function ResumeSection({title, items}: {title: string, items: Item[]}) {
     return <section className={styles.section}>
         <h2>{title}</h2>
-        {items.map(item => <ResumeItem key={item.title} item={item}/>)}
+        {items.map((item, i) => <ResumeItem key={i} item={item}/>)}
     </section>
 }
 

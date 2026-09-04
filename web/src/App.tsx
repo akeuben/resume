@@ -9,7 +9,6 @@ import ResumeHeader from './components/ResumeHeader'
 import Header from './components/Header'
 import { ResumeSectionBullet, ResumeSection } from './components/ResumeSection'
 import ResumeLink from './components/ResumeLink'
-import type { Item } from "./types/Section.d.ts"
 
 function getPreferredColorScheme() {
   if (!window.matchMedia) return 'light';
@@ -21,38 +20,38 @@ function getPreferredColorScheme() {
   return 'light';
 }
 
-function formatDate(date) {
+function formatDate(date: {start: any, end?: any}) {
     return `${date.start} - ${date.end || "present"}`
 }
 
 const transformers = {
-    education: (data) => data.map(data => ({
+    education: (data: any[]) => data.map(data => ({
         title: data.title,
         subtitle: data.institution,
         location: data.location,
         date: formatDate(data.date),
         content: <ul>
-            {data.notes.map(note => <li key={note}>{note}</li>)}
+            {data.notes.map((note: any) => <li key={note}>{note}</li>)}
             <li><b>Notable Courses: </b>{data.courses.join(", ")}</li>
         </ul>
     })),
-    experience: (data) => data.map(data => ({
+    experience: (data: any[]) => data.map(data => ({
         title: data.title,
         subtitle: data.company,
         location: data.location,
         date: formatDate(data.date),
         content: <ul>
-            {data.notes.map(note => <li key={note}>{note}</li>)}
+            {data.notes.map((note: any) => <li key={note}>{note}</li>)}
             <li><b>Skills: </b>{data.skills.join(", ")}</li>
         </ul>
     })),
-    projects: (data) => data.map(data => ({
+    projects: (data: any[]) => data.map(data => ({
         title: data.page ? <a href={`https://akeuben.ca/project/` + data.page}>data.title</a> : data.title,
         subtitle: data.role,
         location: data.github ? <ResumeLink icon={"github"} text={data.github} url={`https://github/com/${data.github}`} /> : "",
         date: data.date,
         content: <ul>
-            {data.notes.map(note => <li key={note}>{note}</li>)}
+            {data.notes.map((note: any) => <li key={note}>{note}</li>)}
             {data.skills && <li><b>Skills: </b>{data.skills.join(", ")}</li>}
         </ul>
     }))
