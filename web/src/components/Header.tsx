@@ -13,7 +13,7 @@ export default function Header({theme, setTheme}: {theme: 'light' | 'dark', setT
 
 function Print() {
     return <button onClick={() => {
-
+        window.location.replace("https://github.com/akeuben/resume/releases/latest/download/resume.pdf");
     }}>
         <FontAwesomeIcon icon={lookupIcon("print")} />
     </button>

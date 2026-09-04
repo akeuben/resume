@@ -22,7 +22,7 @@
     transition: background 0.25s linear, color 0.25s linear;
 }
 
-a {
+a, button {
     cursor: pointer;
 }
 
