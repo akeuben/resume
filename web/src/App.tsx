@@ -1,10 +1,6 @@
 import { useState } from 'react'
 import styles from "./App.module.css"
-import about from '../../data/about.json'
-import skills from '../../data/skills.json'
-import education from '../../data/education.json'
-import experience from '../../data/experience.json'
-import projects from '../../data/projects.json'
+import { about, skills, education, experience, projects } from "../../data/resume.json"
 import ResumeHeader from './components/ResumeHeader'
 import Header from './components/Header'
 import { ResumeSectionBullet, ResumeSection } from './components/ResumeSection'
