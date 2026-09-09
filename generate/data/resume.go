@@ -1,9 +1,11 @@
-package main
+package data
 
 type Resume struct {
-	About     ResumeAbout     `json:"about"`
-	Skills    ResumeSkills    `json:"skills"`
-	Education ResumeEducation `json:"education"`
+	About      ResumeAbout        `json:"about"`
+	Skills     ResumeSkills       `json:"skills"`
+	Education  []ResumeEducation  `json:"education"`
+	Experience []ResumeExperience `json:"experience"`
+	Projects   []ResumeProjects   `json:"projects"`
 }
 
 type ResumeAbout struct {
@@ -15,7 +17,7 @@ type ResumeAbout struct {
 
 type ResumeSkills map[string][]string
 
-type ResumeEducation map[string]struct {
+type ResumeEducation struct {
 	Title       string     `json:"title"`
 	Location    string     `json:"location"`
 	Institution string     `json:"institution"`
@@ -24,7 +26,7 @@ type ResumeEducation map[string]struct {
 	Courses     []string   `json:"courses"`
 }
 
-type ResumeExperience map[string]struct {
+type ResumeExperience struct {
 	Title    string     `json:"title"`
 	Location string     `json:"location"`
 	Company  string     `json:"company"`
@@ -33,14 +35,14 @@ type ResumeExperience map[string]struct {
 	Skills   []string   `json:"skills"`
 }
 
-type ResumeProjects map[string]struct {
-	Title  string     `json:"title"`
-	Id     string     `json:"id"`
-	Role   string     `json:"role"`
-	Github string     `json:"github"`
-	Date   ResumeDate `json:"date"`
-	Notes  []string   `json:"notes"`
-	Skills []string   `json:"skills"`
+type ResumeProjects struct {
+	Title  string   `json:"title"`
+	Id     string   `json:"id"`
+	Role   string   `json:"role"`
+	Github string   `json:"github"`
+	Date   int      `json:"date"`
+	Notes  []string `json:"notes"`
+	Skills []string `json:"skills"`
 }
 
 type ResumeName struct {
