@@ -4,7 +4,7 @@ import { lookupIcon } from '../icons'
 
 export default function Header({theme, setTheme}: {theme: 'light' | 'dark', setTheme: (arg0: 'light' | 'dark') => void}) {
     return <header className={styles.header}>
-        <h1>&lt;Avery<br />&nbsp;Keuben&gt;</h1>
+        <h1>&lt;Avery<br />&nbsp;Keuben/&gt;</h1>
         <a href="https://akeuben.ca">Back to Site</a>
         <Print />
         <ToggleTheme theme={theme} setTheme={setTheme} />
