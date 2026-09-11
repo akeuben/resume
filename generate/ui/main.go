@@ -44,3 +44,13 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 func (m model) View() tea.View {
 	return tea.NewView(m.view.View(m.resume))
 }
+
+type NewViewMsg struct {
+	View View
+}
+
+func SwitchView(view View) tea.Cmd {
+	return func() tea.Msg {
+		return NewViewMsg{view}
+	}
+}

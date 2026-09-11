@@ -217,51 +217,69 @@
             ]
         }
     ],
-    "skills": {
-        "languages": [
-            "Java",
-            "C/C++",
-            "Javascript/Typescript",
-            " Python",
-            "HTML",
-            "CSS",
-            "Zig",
-            "C#",
-            "SQL",
-            "Bash",
-            "Nix",
-            "Haskell"
-        ],
-        "technologies": [
-            "Linux",
-            "Git",
-            "React",
-            "Unity",
-            "Nix",
-            "OpenGL",
-            "Vulkan"
-        ],
-        "areas of interest": [
-            "Systems Administration",
-            "Operating Systems",
-            "Firmware & Drivers",
-            "Networking",
-            "Compilers",
-            "Web Development",
-            "Game Engines",
-            "Game Systems"
-        ],
-        "leadership & communication": [
-            "Led a team of 23 members through a software development task involving design, implementation, testing, and client communication."
-        ],
-        "teamwork": [
-            "Pair Programming",
-            "Small Teams",
-            "Large group projects",
-            "Cross-team coordination"
-        ],
-        "lifelong learner": [
-            "Always interested in learning new technologies, languages, and paradigms."
-        ]
-    }
+    "skills": [
+        { 
+            "title": "languages",
+            "values": [
+                "Java",
+                "C/C++",
+                "Javascript/Typescript",
+                "Python",
+                "HTML",
+                "CSS",
+                "Zig",
+                "C#",
+                "SQL",
+                "Bash",
+                "Nix",
+                "Haskell"
+            ]
+        },
+        {   
+            "title": "technologies",
+            "values": [
+                "Linux",
+                "Git",
+                "React",
+                "Unity",
+                "Nix",
+                "OpenGL",
+                "Vulkan"
+            ]
+        },
+        {
+            "title": "areas of interest",
+            "values": [
+                "Systems Administration",
+                "Operating Systems",
+                "Firmware & Drivers",
+                "Networking",
+                "Compilers",
+                "Web Development",
+                "Game Engines",
+                "Game Systems"
+            ]
+        },
+        {
+            "title": "leadership & communication",
+            "values": [
+                "Led a team of 23 members through a software development task involving design, implementation, testing, and client communication."
+            ]
+        },
+        {
+            "title": "teamwork",
+            "values": [
+                "Pair Programming",
+                "Small Teams",
+                "Large group projects",
+                "Cross-team coordination"
+            ]
+        },
+        {
+            "title": "lifelong learner",
+            "values": [
+                "Always interested in learning new technologies, languages, and paradigms."
+            ]
+        }
+    ]
 }

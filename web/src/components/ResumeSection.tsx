@@ -1,5 +1,5 @@
 import styles from "./ResumeSection.module.css"
-import type { Item } from "../types/Section.d.ts"
+import type { BulletItem, Item } from "../types/Section.d.ts"
 import ResumeItem from "./ResumeItem.tsx"
 
 export function ResumeSection({title, items}: {title: string, items: Item[]}) {
@@ -9,12 +9,12 @@ export function ResumeSection({title, items}: {title: string, items: Item[]}) {
     </section>
 }
 
-export function ResumeSectionBullet({title, items}: {title: string, items: Record<string, string[]>}) {
+export function ResumeSectionBullet({title, items}: {title: string, items: BulletItem[]}) {
     return <section className={styles.section}>
         <h2>{title}</h2>
         <ul>
             {
-                Object.keys(items).map(title => <li key={title}><b>{title[0].toUpperCase() + title.substring(1)}: </b>{items[title].join(", ")}</li>)
+                items.map(({title, values}) => <li key={title}><b>{title[0].toUpperCase() + title.substring(1)}: </b>{values.join(", ")}</li>)
             }
         </ul>
     </section>

@@ -7,3 +7,8 @@ export type Item = {
     date: ReactNode,
     content: ReactNode
 }
+
+export type BulletItem = {
+    title: string,
+    values: string[],
+}

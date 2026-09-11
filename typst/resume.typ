@@ -90,7 +90,11 @@
     ]
 
     #resume_header("Skills")\
-    #box(inset: (bottom: gap), list(..skills.keys().map(category => [*#titlecase(category):* #skills.at(category).join(", ")])))
+    #box(inset: (bottom: gap), list(..skills.map(entry => {
+      let title = entry.at("title")
+      let values = entry.at("values")
+      return [*#titlecase(title):* #values.join(", ")]
+    })))
   
     #resume_header("Education")
     #education.map(item => resume-item(resume-education-parse(item))).join()
