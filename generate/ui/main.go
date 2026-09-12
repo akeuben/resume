@@ -19,7 +19,7 @@ type model struct {
 func InitialModel(resume *data.Resume) model {
 	return model{
 		resume: resume,
-		view:   MakeMainView(),
+		view:   MakeMainView(resume),
 	}
 }
 
@@ -34,6 +34,9 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		case "ctrl+c":
 			return m, tea.Quit
 		}
+	case NewViewMsg:
+		m.view = msg.View
+		return m, nil
 	}
 	view, cmd := m.view.Update(msg)
 	m.view = view

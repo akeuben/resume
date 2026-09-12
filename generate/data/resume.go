@@ -1,8 +1,12 @@
 package data
 
+type DisplayableListItem interface {
+	Display() string
+}
+
 type Resume struct {
 	About      ResumeAbout        `json:"about"`
-	Skills     ResumeSkills       `json:"skills"`
+	Skills     []ResumeSkill      `json:"skills"`
 	Education  []ResumeEducation  `json:"education"`
 	Experience []ResumeExperience `json:"experience"`
 	Projects   []ResumeProjects   `json:"projects"`
@@ -15,7 +19,14 @@ type ResumeAbout struct {
 	Contact   []ResumeLink `json:"contact"`
 }
 
-type ResumeSkills map[string][]string
+type ResumeSkill struct {
+	Title  string   `json:"title"`
+	Values []string `json:"values"`
+}
+
+func (self ResumeSkill) Display() string {
+	return self.Title
+}
 
 type ResumeEducation struct {
 	Title       string     `json:"title"`
@@ -24,6 +35,10 @@ type ResumeEducation struct {
 	Date        ResumeDate `json:"date"`
 	Notes       []string   `json:"notes"`
 	Courses     []string   `json:"courses"`
+}
+
+func (self ResumeEducation) Display() string {
+	return self.Title
 }
 
 type ResumeExperience struct {
@@ -35,6 +50,10 @@ type ResumeExperience struct {
 	Skills   []string   `json:"skills"`
 }
 
+func (self ResumeExperience) Display() string {
+	return self.Title
+}
+
 type ResumeProjects struct {
 	Title  string   `json:"title"`
 	Id     string   `json:"id"`
@@ -43,6 +62,10 @@ type ResumeProjects struct {
 	Date   int      `json:"date"`
 	Notes  []string `json:"notes"`
 	Skills []string `json:"skills"`
+}
+
+func (self ResumeProjects) Display() string {
+	return self.Title
 }
 
 type ResumeName struct {

@@ -6,7 +6,7 @@ import (
 
 type MenuModel struct {
 	options  []MenuOption
-	selected int
+	Selected int
 }
 
 type MenuOption struct {
@@ -41,7 +41,7 @@ func (m MenuOption) View(selected bool) string {
 func (m MenuModel) View() string {
 	s := "\n\n"
 	for index, element := range m.options {
-		s += element.View(index == m.selected)
+		s += element.View(index == m.Selected)
 	}
 	return s
 }
@@ -51,15 +51,19 @@ func (m MenuModel) Update(msg tea.Msg) (MenuModel, tea.Cmd) {
 	case tea.KeyMsg:
 		switch msg.Key().Code {
 		case tea.KeyDown:
-			m.selected += 1
-			if m.selected >= len(m.options) {
-				m.selected = len(m.options) - 1
+			m.Selected += 1
+			if m.Selected >= len(m.options) {
+				m.Selected = len(m.options) - 1
 			}
 		case tea.KeyUp:
-			m.selected -= 1
-			if m.selected < 0 {
-				m.selected = 0
+			m.Selected -= 1
+			if m.Selected < 0 {
+				m.Selected = 0
 			}
+		case tea.KeyEnter:
+			return m, m.options[m.Selected].cmd
+		case tea.KeyKpEnter:
+			return m, m.options[m.Selected].cmd
 		}
 	}
 	return m, nil

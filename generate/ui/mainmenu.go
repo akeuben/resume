@@ -11,12 +11,12 @@ type MainView struct {
 	menu components.MenuModel
 }
 
-func MakeMainView() MainView {
+func MakeMainView(resume *data.Resume) MainView {
 	menu := components.CreateMenu([]components.MenuOption{
-		components.CreateMenuOption("Skills", "Add, modify, reorder, or remove skills for this resume instance", nil),
-		components.CreateMenuOption("Education", "Add modify, or remove education items", nil),
-		components.CreateMenuOption("Experience", "Add, modify, or remove experience items", nil),
-		components.CreateMenuOption("Projects", "Choose projects to display on resume", nil),
+		components.CreateMenuOption("Skills", "Add, modify, reorder, or remove skills for this resume instance", SwitchView(MakeSubMenuView(&resume.Skills, resume))),
+		components.CreateMenuOption("Education", "Add modify, or remove education items", SwitchView(MakeSubMenuView(&resume.Education, resume))),
+		components.CreateMenuOption("Experience", "Add, modify, or remove experience items", SwitchView(MakeSubMenuView(&resume.Experience, resume))),
+		components.CreateMenuOption("Projects", "Choose projects to display on resume", SwitchView(MakeSubMenuView(&resume.Projects, resume))),
 	}, 0)
 
 	return MainView{menu}
