@@ -2,6 +2,7 @@ package components
 
 import (
 	"resume/generate/data"
+	"slices"
 
 	tea "charm.land/bubbletea/v2"
 )
@@ -38,17 +39,31 @@ func ViewItem(text string, selected bool) string {
 func (m ListEditorModel[T]) Update(msg tea.Msg) (ListEditorModel[T], tea.Cmd) {
 	switch msg := msg.(type) {
 	case tea.KeyMsg:
-		switch msg.Key().Code {
-		case tea.KeyDown:
+		switch msg.String() {
+		case "down":
 			m.Selected += 1
 			if m.Selected >= len(*m.List) {
 				m.Selected = len(*m.List) - 1
 			}
-		case tea.KeyUp:
+		case "up":
 			m.Selected -= 1
 			if m.Selected < 0 {
 				m.Selected = 0
 			}
+		case "shift+down":
+			if m.Selected >= len(*m.List)-1 {
+				return m, nil
+			}
+			(*m.List)[m.Selected], (*m.List)[m.Selected+1] = (*m.List)[m.Selected+1], (*m.List)[m.Selected]
+			m.Selected += 1
+		case "shift+up":
+			if m.Selected <= 0 {
+				return m, nil
+			}
+			(*m.List)[m.Selected], (*m.List)[m.Selected-1] = (*m.List)[m.Selected-1], (*m.List)[m.Selected]
+			m.Selected -= 1
+		case "delete":
+			_ = slices.Delete(*m.List, m.Selected, m.Selected+1)
 		}
 	}
 	return m, nil
