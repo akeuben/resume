@@ -1,4 +1,4 @@
-#import "./resume.typ": *
+#import "./lib.typ": *
 
 #let (about, education, experience, skills, projects) = json("../data/resume.json")
 

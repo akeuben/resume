@@ -113,3 +113,35 @@
     Available Upon Request
   ]
 }
+
+#let letter(about, company, content) = {
+  set page(margin: 0.33in)
+  set par(spacing: gap)
+  set document(title: [Resume - #about.name.first #about.name.last])
+  
+  [
+    #align(center)[
+      #text(size: 3em, weight: "bold", font: "Roboto", about.name.first + " " + about.name.last)
+      
+      #text(size: 1em, weight: "bold", about.at("positions").join(sep))
+      
+      #about.at("links").map(link => resume_link(link.icon, link.text, link.url)).join(sep)
+      
+      #about.at("contact").map(link => resume_link(link.icon, link.text, link.at("url", default: none))).join(sep)
+    ]
+    #block(inset: 0.33in)[
+      #set par(spacing: 1.5em)
+      #datetime.today().display("[month repr:long] [day], [year]")
+      
+      #company.at("manager", default: "Hiring Manager")\
+      #company.at("name")\
+      #company.at("address")
+      
+      #content
+
+      Sincerely,
+      #image("../data/signature.png", height: 25pt)
+      Avery Keuben
+    ]
+  ]
+}
